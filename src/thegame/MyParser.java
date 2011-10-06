@@ -23,8 +23,11 @@ class MyParser implements AdventureParser {
     public AdventureCommand parse(String command, AdventureEngine e) throws NoSuchTargetException {
         String delimiters = "[ ]+";
         String[] strCommand = command.split(delimiters);
+        if(strCommand.length == 1){
+            return new AdventureCommand(strCommand[0]);
+        }
         AdventureTarget t = new NoExistingTarget();
-        AdventureCommand retCom;
+        AdventureCommand retCom = null;
         int tarLoc = -1;
         for(int i = 1; i < strCommand.length; i++){
             t = findTarget(strCommand[1], e);
