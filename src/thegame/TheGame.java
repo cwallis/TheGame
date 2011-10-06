@@ -23,6 +23,5 @@ public class TheGame {
         AdventureLocation startLocation = new Entranceway("This is a description");
         AdventureTarget key = new Key();
         AdventureWindow userInterface = new AdventureWindow(startLocation, new HParser());
-        System.out.println("See look I change things");
     }
 }
